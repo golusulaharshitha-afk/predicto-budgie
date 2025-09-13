@@ -62,18 +62,18 @@ const GoalTracker = () => {
   const priorities = ['High', 'Medium', 'Low'];
 
   const priorityColors = {
-    'High': 'bg-destructive text-destructive-foreground',
-    'Medium': 'bg-warning text-warning-foreground',
-    'Low': 'bg-success text-success-foreground'
+    'High': 'bg-red-coral text-white',
+    'Medium': 'bg-yellow-electric text-black',
+    'Low': 'bg-green-neon text-white'
   };
 
   const categoryColors = {
-    'Savings': 'bg-primary text-primary-foreground',
-    'Technology': 'bg-info text-info-foreground',
-    'Travel': 'bg-warning text-warning-foreground',
-    'Education': 'bg-success text-success-foreground',
-    'Health': 'bg-destructive text-destructive-foreground',
-    'Other': 'bg-muted text-muted-foreground'
+    'Savings': 'bg-purple-vibrant text-white',
+    'Technology': 'bg-blue-electric text-white',
+    'Travel': 'bg-pink-vibrant text-white',
+    'Education': 'bg-green-neon text-white',
+    'Health': 'bg-orange-bright text-white',
+    'Other': 'bg-teal-bright text-white'
   };
 
   const addGoal = () => {
@@ -148,52 +148,52 @@ const GoalTracker = () => {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-purple border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Total Goals</p>
-                  <p className="text-2xl font-bold">{goals.length}</p>
+                  <p className="text-sm text-white/90">Total Goals</p>
+                  <p className="text-2xl font-bold text-white">{goals.length}</p>
                 </div>
-                <Target className="h-8 w-8 text-primary" />
+                <Target className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-blue border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Target Amount</p>
-                  <p className="text-2xl font-bold">${goals.reduce((sum, goal) => sum + goal.target, 0)}</p>
+                  <p className="text-sm text-white/90">Target Amount</p>
+                  <p className="text-2xl font-bold text-white">${goals.reduce((sum, goal) => sum + goal.target, 0)}</p>
                 </div>
-                <DollarSign className="h-8 w-8 text-primary" />
+                <DollarSign className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-orange border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Saved So Far</p>
-                  <p className="text-2xl font-bold text-success">${goals.reduce((sum, goal) => sum + goal.current, 0)}</p>
+                  <p className="text-sm text-white/90">Saved So Far</p>
+                  <p className="text-2xl font-bold text-white">${goals.reduce((sum, goal) => sum + goal.current, 0)}</p>
                 </div>
-                <TrendingUp className="h-8 w-8 text-success" />
+                <TrendingUp className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-rainbow border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Completed</p>
-                  <p className="text-2xl font-bold text-success">
+                  <p className="text-sm text-white/90">Completed</p>
+                  <p className="text-2xl font-bold text-white">
                     {goals.filter(goal => goal.current >= goal.target).length}
                   </p>
                 </div>
-                <Star className="h-8 w-8 text-success" />
+                <Star className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
@@ -203,7 +203,7 @@ const GoalTracker = () => {
         <div className="flex justify-center">
           <Button 
             onClick={() => setShowAddForm(!showAddForm)}
-            className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+            className="bg-gradient-rainbow hover:shadow-glow transition-all duration-300 text-white font-semibold"
           >
             <Plus className="h-4 w-4 mr-2" />
             Add New Goal

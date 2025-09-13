@@ -27,12 +27,12 @@ const ExpenseTracker = () => {
   const categories = ['Food', 'Transportation', 'Entertainment', 'Books', 'Health', 'Other'];
   
   const categoryColors = {
-    'Food': 'bg-primary text-primary-foreground',
-    'Transportation': 'bg-info text-info-foreground',
-    'Entertainment': 'bg-warning text-warning-foreground',
-    'Books': 'bg-success text-success-foreground',
-    'Health': 'bg-destructive text-destructive-foreground',
-    'Other': 'bg-muted text-muted-foreground'
+    'Food': 'bg-orange-bright text-white',
+    'Transportation': 'bg-blue-electric text-white',
+    'Entertainment': 'bg-pink-vibrant text-white',
+    'Books': 'bg-green-neon text-white',
+    'Health': 'bg-red-coral text-white',
+    'Other': 'bg-purple-vibrant text-white'
   };
 
   const addExpense = () => {
@@ -159,7 +159,7 @@ const ExpenseTracker = () => {
               </div>
             </div>
             
-            <Button onClick={addExpense} className="mt-4 bg-gradient-primary hover:shadow-glow transition-all duration-300">
+            <Button onClick={addExpense} className="mt-4 bg-gradient-rainbow hover:shadow-glow transition-all duration-300 text-white font-semibold">
               <Plus className="h-4 w-4 mr-2" />
               Add Expense
             </Button>

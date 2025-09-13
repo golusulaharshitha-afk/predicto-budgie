@@ -35,7 +35,7 @@ const Dashboard = () => {
     { name: 'Spring Break', target: 800, current: 200, progress: 25 },
   ];
 
-  const COLORS = ['hsl(var(--primary))', 'hsl(var(--info))', 'hsl(var(--success))', 'hsl(var(--warning))', 'hsl(var(--expense))'];
+  const COLORS = ['hsl(var(--purple-vibrant))', 'hsl(var(--blue-electric))', 'hsl(var(--green-neon))', 'hsl(var(--orange-bright))', 'hsl(var(--pink-vibrant))'];
 
   return (
     <div className="min-h-screen bg-gradient-background p-6">
@@ -50,50 +50,50 @@ const Dashboard = () => {
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-blue border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Monthly Budget</p>
-                  <p className="text-2xl font-bold">$1,500</p>
+                  <p className="text-sm text-white/90">Monthly Budget</p>
+                  <p className="text-2xl font-bold text-white">$1,500</p>
                 </div>
-                <DollarSign className="h-8 w-8 text-primary" />
+                <DollarSign className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-orange border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Spent This Month</p>
-                  <p className="text-2xl font-bold text-expense">$1,200</p>
+                  <p className="text-sm text-white/90">Spent This Month</p>
+                  <p className="text-2xl font-bold text-white">$1,200</p>
                 </div>
-                <TrendingDown className="h-8 w-8 text-expense" />
+                <TrendingDown className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-purple border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Total Savings</p>
-                  <p className="text-2xl font-bold text-success">$1,600</p>
+                  <p className="text-sm text-white/90">Total Savings</p>
+                  <p className="text-2xl font-bold text-white">$1,600</p>
                 </div>
-                <PiggyBank className="h-8 w-8 text-success" />
+                <PiggyBank className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-card border-0 shadow-lg">
+          <Card className="bg-gradient-rainbow border-0 shadow-xl">
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-muted-foreground">Budget Remaining</p>
-                  <p className="text-2xl font-bold text-success">$300</p>
+                  <p className="text-sm text-white/90">Budget Remaining</p>
+                  <p className="text-2xl font-bold text-white">$300</p>
                 </div>
-                <TrendingUp className="h-8 w-8 text-success" />
+                <TrendingUp className="h-8 w-8 text-white/80" />
               </div>
             </CardContent>
           </Card>
@@ -160,9 +160,9 @@ const Dashboard = () => {
                   <Line 
                     type="monotone" 
                     dataKey="amount" 
-                    stroke="hsl(var(--primary))" 
+                    stroke="hsl(var(--purple-vibrant))" 
                     strokeWidth={3}
-                    dot={{ fill: 'hsl(var(--primary))', strokeWidth: 2, r: 4 }}
+                    dot={{ fill: 'hsl(var(--purple-vibrant))', strokeWidth: 2, r: 4 }}
                   />
                 </LineChart>
               </ResponsiveContainer>
