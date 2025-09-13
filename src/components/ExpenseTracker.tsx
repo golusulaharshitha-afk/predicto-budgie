@@ -95,48 +95,50 @@ const ExpenseTracker = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-background p-6">
-      <div className="max-w-4xl mx-auto space-y-6">
+    <div className="min-h-screen bg-gradient-background p-4 md:p-6 animate-fade-in">
+      <div className="max-w-4xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold">Expense Tracker</h1>
-          <p className="text-muted-foreground">Track and categorize your spending with AI assistance</p>
+        <div className="text-center space-y-4 py-8">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-instagram bg-clip-text text-transparent animate-bounce-in">Expense Tracker</h1>
+          <p className="text-lg text-gray-700 font-medium animate-scale-in">🎯 Track and categorize your spending with AI assistance 🎯</p>
         </div>
 
         {/* Add New Expense */}
-        <Card className="bg-gradient-card border-0 shadow-lg">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Plus className="h-5 w-5 text-primary" />
+        <Card className="bg-white/90 backdrop-blur-lg border-0 shadow-2xl rounded-3xl overflow-hidden transform hover:scale-[1.01] transition-all duration-300">
+          <CardHeader className="bg-gradient-instagram text-white p-8">
+            <CardTitle className="flex items-center gap-3 text-2xl">
+              <Plus className="h-6 w-6 text-white" />
               Add New Expense
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Description</label>
+          <CardContent className="p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="space-y-3">
+                <label className="text-sm font-semibold text-gray-700">Description</label>
                 <Input
                   placeholder="What did you spend on?"
                   value={newExpense.description}
                   onChange={(e) => handleDescriptionChange(e.target.value)}
+                  className="rounded-2xl border-2 border-gray-200 focus:border-purple-400 transition-all duration-300"
                 />
               </div>
               
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Amount ($)</label>
+              <div className="space-y-3">
+                <label className="text-sm font-semibold text-gray-700">Amount ($)</label>
                 <Input
                   type="number"
                   step="0.01"
                   placeholder="0.00"
                   value={newExpense.amount}
                   onChange={(e) => setNewExpense({ ...newExpense, amount: e.target.value })}
+                  className="rounded-2xl border-2 border-gray-200 focus:border-purple-400 transition-all duration-300"
                 />
               </div>
               
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Category</label>
+              <div className="space-y-3">
+                <label className="text-sm font-semibold text-gray-700">Category</label>
                 <Select value={newExpense.category} onValueChange={(value) => setNewExpense({ ...newExpense, category: value })}>
-                  <SelectTrigger>
+                  <SelectTrigger className="rounded-2xl border-2 border-gray-200">
                     <SelectValue placeholder="Select category" />
                   </SelectTrigger>
                   <SelectContent>
@@ -149,54 +151,57 @@ const ExpenseTracker = () => {
                 </Select>
               </div>
               
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Date</label>
+              <div className="space-y-3">
+                <label className="text-sm font-semibold text-gray-700">Date</label>
                 <Input
                   type="date"
                   value={newExpense.date}
                   onChange={(e) => setNewExpense({ ...newExpense, date: e.target.value })}
+                  className="rounded-2xl border-2 border-gray-200 focus:border-purple-400 transition-all duration-300"
                 />
               </div>
             </div>
             
-            <Button onClick={addExpense} className="mt-4 bg-gradient-rainbow hover:shadow-glow transition-all duration-300 text-white font-semibold">
-              <Plus className="h-4 w-4 mr-2" />
+            <Button onClick={addExpense} className="mt-8 bg-gradient-instagram hover:shadow-2xl transition-all duration-300 text-white font-semibold text-lg px-8 py-4 rounded-2xl transform hover:scale-105">
+              <Plus className="h-5 w-5 mr-2" />
               Add Expense
             </Button>
           </CardContent>
         </Card>
 
         {/* Expenses List */}
-        <Card className="bg-gradient-card border-0 shadow-lg">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <TrendingDown className="h-5 w-5 text-primary" />
+        <Card className="bg-white/90 backdrop-blur-lg border-0 shadow-2xl rounded-3xl overflow-hidden">
+          <CardHeader className="bg-gradient-purple text-white p-8">
+            <CardTitle className="flex items-center gap-3 text-2xl">
+              <TrendingDown className="h-6 w-6 text-white" />
               Recent Expenses
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
+          <CardContent className="p-8">
+            <div className="space-y-4">
               {expenses.map((expense) => (
-                <div key={expense.id} className="flex items-center justify-between p-4 bg-background/50 rounded-lg border border-border/50">
-                  <div className="flex items-center gap-4">
+                <div key={expense.id} className="flex items-center justify-between p-6 bg-gradient-to-r from-white to-gray-50 rounded-2xl border border-gray-100 shadow-lg hover:shadow-xl transform hover:scale-[1.01] transition-all duration-300">
+                  <div className="flex items-center gap-6">
                     <div className="flex flex-col">
-                      <div className="flex items-center gap-2">
-                        <CreditCard className="h-4 w-4 text-muted-foreground" />
-                        <span className="font-medium">{expense.description}</span>
+                      <div className="flex items-center gap-3">
+                        <div className="bg-gradient-to-r from-purple-400 to-pink-400 p-2 rounded-xl">
+                          <CreditCard className="h-5 w-5 text-white" />
+                        </div>
+                        <span className="font-semibold text-lg text-gray-800">{expense.description}</span>
                       </div>
-                      <div className="flex items-center gap-2 mt-1">
-                        <Calendar className="h-3 w-3 text-muted-foreground" />
-                        <span className="text-sm text-muted-foreground">{expense.date}</span>
+                      <div className="flex items-center gap-3 mt-2">
+                        <Calendar className="h-4 w-4 text-gray-500" />
+                        <span className="text-sm text-gray-600 font-medium">{expense.date}</span>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-3">
-                    <Badge className={categoryColors[expense.category as keyof typeof categoryColors]}>
-                      <Tag className="h-3 w-3 mr-1" />
+                  <div className="flex items-center gap-4">
+                    <Badge className={`${categoryColors[expense.category as keyof typeof categoryColors]} px-4 py-2 rounded-2xl text-sm font-semibold shadow-lg`}>
+                      <Tag className="h-3 w-3 mr-2" />
                       {expense.category}
                     </Badge>
-                    <span className="font-bold text-lg">${expense.amount.toFixed(2)}</span>
+                    <span className="font-bold text-2xl text-gray-800">${expense.amount.toFixed(2)}</span>
                   </div>
                 </div>
               ))}

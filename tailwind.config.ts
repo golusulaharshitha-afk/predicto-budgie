@@ -90,6 +90,7 @@ export default {
         "gradient-blue": "var(--gradient-blue)",
         "gradient-orange": "var(--gradient-orange)",
         "gradient-rainbow": "var(--gradient-rainbow)",
+        "gradient-instagram": "var(--gradient-instagram)",
       },
       boxShadow: {
         sm: "var(--shadow-sm)",
@@ -101,6 +102,7 @@ export default {
       transitionTimingFunction: {
         smooth: "var(--transition-smooth)",
         bounce: "var(--transition-bounce)",
+        instagram: "var(--transition-instagram)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -128,7 +130,25 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.3s ease-out",
+        "bounce-in": "bounce-in 0.5s ease-out",
+        "scale-in": "scale-in 0.3s ease-out",
+        "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
+      keyframes: {
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        "bounce-in": {
+          "0%": { opacity: "0", transform: "scale(0.3)" },
+          "50%": { opacity: "1", transform: "scale(1.1)" },
+          "100%": { opacity: "1", transform: "scale(1)" }
+        },
+        "scale-in": {
+          "0%": { opacity: "0", transform: "scale(0.8)" },
+          "100%": { opacity: "1", transform: "scale(1)" }
+        },
     },
   },
   plugins: [require("tailwindcss-animate")],

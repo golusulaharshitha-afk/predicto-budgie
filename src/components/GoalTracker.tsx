@@ -138,12 +138,12 @@ const GoalTracker = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-background p-6">
-      <div className="max-w-6xl mx-auto space-y-6">
+    <div className="min-h-screen bg-gradient-background p-4 md:p-6 animate-fade-in">
+      <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold">Goal Tracker</h1>
-          <p className="text-muted-foreground">Set and track your financial goals with smart insights</p>
+        <div className="text-center space-y-4 py-8">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-instagram bg-clip-text text-transparent animate-bounce-in">Goal Tracker</h1>
+          <p className="text-lg text-gray-700 font-medium animate-scale-in">🎯 Set and track your financial goals with smart insights 🎯</p>
         </div>
 
         {/* Quick Stats */}

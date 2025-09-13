@@ -38,78 +38,78 @@ const Dashboard = () => {
   const COLORS = ['hsl(var(--purple-vibrant))', 'hsl(var(--blue-electric))', 'hsl(var(--green-neon))', 'hsl(var(--orange-bright))', 'hsl(var(--pink-vibrant))'];
 
   return (
-    <div className="min-h-screen bg-gradient-background p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen bg-gradient-background p-4 md:p-6 animate-fade-in">
+      <div className="max-w-7xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-2">
-          <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+        <div className="text-center space-y-4 py-8">
+          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-instagram bg-clip-text text-transparent animate-bounce-in">
             Student Finance Manager
           </h1>
-          <p className="text-muted-foreground">AI-powered financial insights for students</p>
+          <p className="text-lg text-gray-700 font-medium animate-scale-in">✨ AI-powered financial insights for students ✨</p>
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Card className="bg-gradient-blue border-0 shadow-xl">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-white/90">Monthly Budget</p>
-                  <p className="text-2xl font-bold text-white">$1,500</p>
-                </div>
-                <DollarSign className="h-8 w-8 text-white/80" />
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="bg-gradient-blue rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-3xl animate-scale-in">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-white/90 font-medium">Monthly Budget</p>
+                <p className="text-3xl font-bold text-white mt-2">$1,500</p>
               </div>
-            </CardContent>
-          </Card>
+              <div className="bg-white/20 p-4 rounded-2xl">
+                <DollarSign className="h-8 w-8 text-white" />
+              </div>
+            </div>
+          </div>
 
-          <Card className="bg-gradient-orange border-0 shadow-xl">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-white/90">Spent This Month</p>
-                  <p className="text-2xl font-bold text-white">$1,200</p>
-                </div>
-                <TrendingDown className="h-8 w-8 text-white/80" />
+          <div className="bg-gradient-orange rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-3xl animate-scale-in">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-white/90 font-medium">Spent This Month</p>
+                <p className="text-3xl font-bold text-white mt-2">$1,200</p>
               </div>
-            </CardContent>
-          </Card>
+              <div className="bg-white/20 p-4 rounded-2xl">
+                <TrendingDown className="h-8 w-8 text-white" />
+              </div>
+            </div>
+          </div>
 
-          <Card className="bg-gradient-purple border-0 shadow-xl">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-white/90">Total Savings</p>
-                  <p className="text-2xl font-bold text-white">$1,600</p>
-                </div>
-                <PiggyBank className="h-8 w-8 text-white/80" />
+          <div className="bg-gradient-purple rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-3xl animate-scale-in">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-white/90 font-medium">Total Savings</p>
+                <p className="text-3xl font-bold text-white mt-2">$1,600</p>
               </div>
-            </CardContent>
-          </Card>
+              <div className="bg-white/20 p-4 rounded-2xl">
+                <PiggyBank className="h-8 w-8 text-white" />
+              </div>
+            </div>
+          </div>
 
-          <Card className="bg-gradient-rainbow border-0 shadow-xl">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-white/90">Budget Remaining</p>
-                  <p className="text-2xl font-bold text-white">$300</p>
-                </div>
-                <TrendingUp className="h-8 w-8 text-white/80" />
+          <div className="bg-gradient-instagram rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-3xl animate-scale-in">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-white/90 font-medium">Budget Remaining</p>
+                <p className="text-3xl font-bold text-white mt-2">$300</p>
               </div>
-            </CardContent>
-          </Card>
+              <div className="bg-white/20 p-4 rounded-2xl">
+                <TrendingUp className="h-8 w-8 text-white" />
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Charts Row */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Expense Categories */}
-          <Card className="bg-gradient-card border-0 shadow-lg">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-gradient-primary"></div>
+          <Card className="bg-white/90 backdrop-blur-lg border-0 shadow-2xl rounded-3xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+            <CardHeader className="bg-gradient-instagram text-white p-8">
+              <CardTitle className="flex items-center gap-3 text-2xl">
+                <div className="w-4 h-4 rounded-full bg-white animate-pulse-slow"></div>
                 Expense Categories
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-8">
               <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
@@ -118,7 +118,7 @@ const Dashboard = () => {
                     cy="50%"
                     innerRadius={60}
                     outerRadius={100}
-                    paddingAngle={5}
+                    paddingAngle={8}
                     dataKey="value"
                   >
                     {expenseData.map((entry, index) => (
@@ -128,14 +128,14 @@ const Dashboard = () => {
                   <Tooltip formatter={(value) => [`${value}%`, 'Percentage']} />
                 </PieChart>
               </ResponsiveContainer>
-              <div className="grid grid-cols-2 gap-2 mt-4">
+              <div className="grid grid-cols-2 gap-3 mt-6">
                 {expenseData.map((item, index) => (
-                  <div key={item.name} className="flex items-center gap-2">
+                  <div key={item.name} className="flex items-center gap-3 p-3 bg-gradient-to-r from-white to-gray-50 rounded-2xl shadow-sm">
                     <div 
-                      className="w-3 h-3 rounded-full" 
+                      className="w-4 h-4 rounded-full shadow-md" 
                       style={{ backgroundColor: COLORS[index % COLORS.length] }}
                     ></div>
-                    <span className="text-sm">{item.name}</span>
+                    <span className="text-sm font-medium">{item.name}</span>
                   </div>
                 ))}
               </div>
